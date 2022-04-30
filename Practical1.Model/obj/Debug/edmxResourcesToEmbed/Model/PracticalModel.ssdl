@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Practical1Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="EvenTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Completed" Type="bit" />
+  </EntityType>
+  <EntityType Name="HistoryTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ReferenceId" Type="int" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Completed" Type="bit" />
+    <Property Name="Action" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="OddTable">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="UserId" Type="int" />
+    <Property Name="Title" Type="nvarchar" MaxLength="150" />
+    <Property Name="Completed" Type="bit" />
+  </EntityType>
+  <EntityContainer Name="Practical1ModelStoreContainer">
+    <EntitySet Name="EvenTable" EntityType="Self.EvenTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="HistoryTable" EntityType="Self.HistoryTable" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OddTable" EntityType="Self.OddTable" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

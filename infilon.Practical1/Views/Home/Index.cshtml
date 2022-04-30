@@ -3,6 +3,52 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+<h2>User Data (Odd)</h2>
+<div class="form-div hide">
+    <form>
+        <div class="row">
+            <div class="col-25">
+                <label for="fname">First Name</label>
+            </div>
+            <div class="col-75">
+                <input type="text" id="title" placeholder="Your title..">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-25">
+                <label for="status">Status</label>
+            </div>
+            <div class="col-75">
+                <select id="status">
+                    <option value="true">Completed</option>
+                    <option value="false">Not Complete</option>
+                </select>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <input type="button" class="handleSubmit" value="Submit">
+        </div>
+    </form>
+</div>
+<table class="oddTable">
+    <thead>
+        <tr>
+            <th width="100"></th>
+            <th width="50" class="text-center">Sr. No</th>
+            <th width="300" class="text-center">Title</th>
+            <th width="100" class="text-center">Status</th>
+            <th width="100"></th>
+        </tr>
+    </thead>
+    <tbody class="tbody">
+        <tr>
+            <td colspan="5">Loading data...</td>
+        </tr>
+    </tbody>
+</table>
 
-<h2>Index</h2>
-
+@section scripts
+{
+    <script src="~/Content/odd.js"></script>
+}
